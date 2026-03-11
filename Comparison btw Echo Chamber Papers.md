@@ -100,7 +100,7 @@ $T_o vs. T_r vs. T_g $ Prompt Template：
 
 **Paper 2**
 
-<img width="450" height="575" alt="image" src="https://github.com/user-attachments/assets/b3cb0de4-8939-4e57-940f-e45ff03ebaa2" />
+<img width="700" height="855" alt="image" src="https://github.com/user-attachments/assets/b3cb0de4-8939-4e57-940f-e45ff03ebaa2" />
 
 <img width="900" height="1021" alt="image" src="https://github.com/user-attachments/assets/9e47d030-d253-4986-9da4-b59b21944473" />
 
