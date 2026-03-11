@@ -34,7 +34,6 @@ Agent 具備短期記憶 + 長期記憶：
 
 根據使用者在 Twitter 的交互關係，包括回文（Retweets）+ 貼文（Posts）+ 追蹤關係，由具備獨特意見的使用者（節點）+ 社會連結（線）組成，建構 Active User Network。
 
-Agent 的 Context 以**歷史貼文**作為意見的代表。
 
 ---
 
@@ -73,8 +72,20 @@ $$v_i(t) = \frac{v_i(0) + \sum_{j \in N(i)} w_{ij} \cdot v_j(t-1)}{1 + |N(i)|}$$
 
 以 DeGroot Model 為基礎，將影響函數 f 改為 LLM 意見更新算法：
 
-$$f(O_j, O_i(t)) = \text{LLM}(T_o(C_i, C_j))$$
-$$g(O_i, O_j) = \text{LLM}(T_r(C_i, C_j))$$
+O_i(t+1) = O_i(t) + (1 / |N_i(t)|) * sigma {j belongs to N_i(t)} {f(O_j, O_i(t))}
+
+	O_i(t) : Agent 在特定時間 t  所持有的 意見
+
+	N_i(t) : Directed Graph 中，Agent 的其他鄰居
+
+	f(O_j, O_i(t)) = wij(Oj − Oi) 影響函數
+
+Paper 將其改為 LLM 意見更新算法
+
+	f(O_j, O_i(t)) = LLM(T_o(C_i, C_j))
+
+	g(O_i, O_j)    = LLM(T_r(C_i, C_j))
+
 $$y_i(t) \sim \text{LLM}(T_g(C_i, \{C_j \mid j \in N_i(t)\}))$$
 
 <img width="600" height="620" alt="image" src="https://github.com/user-attachments/assets/04e81d0e-3ab8-47fe-bc44-7efff8945bb6" />
