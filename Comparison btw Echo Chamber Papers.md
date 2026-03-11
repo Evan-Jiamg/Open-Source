@@ -92,17 +92,17 @@ $T_o vs. T_r vs. T_g $ Prompt Template：
 
 **Paper 1**
 
-<img width="700" height="1048" alt="image" src="https://github.com/user-attachments/assets/f1c7d678-9bea-4191-ae1d-6207a05a5bc0" />
+<img width="900" height="1048" alt="image" src="https://github.com/user-attachments/assets/f1c7d678-9bea-4191-ae1d-6207a05a5bc0" />
 
-<img width="735" height="201" alt="image" src="https://github.com/user-attachments/assets/eb90e344-cd2d-4727-afa7-d2e1e9632a6c" />
+<img width="935" height="201" alt="image" src="https://github.com/user-attachments/assets/eb90e344-cd2d-4727-afa7-d2e1e9632a6c" />
 
 ---
 
 **Paper 2**
 
-<img width="650" height="575" alt="image" src="https://github.com/user-attachments/assets/b3cb0de4-8939-4e57-940f-e45ff03ebaa2" />
+<img width="450" height="575" alt="image" src="https://github.com/user-attachments/assets/b3cb0de4-8939-4e57-940f-e45ff03ebaa2" />
 
-<img width="1300" height="1021" alt="image" src="https://github.com/user-attachments/assets/9e47d030-d253-4986-9da4-b59b21944473" />
+<img width="900" height="1021" alt="image" src="https://github.com/user-attachments/assets/9e47d030-d253-4986-9da4-b59b21944473" />
 
 ---
 
