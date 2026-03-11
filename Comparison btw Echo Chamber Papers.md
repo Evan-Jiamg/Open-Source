@@ -79,7 +79,7 @@ $$y_i(t) \sim \text{LLM}(T_g(C_i, \{C_j \mid j \in N_i(t)\}))$$
 
 <img width="600" height="620" alt="image" src="https://github.com/user-attachments/assets/04e81d0e-3ab8-47fe-bc44-7efff8945bb6" />
 
-$T_o vs. T_r vs. T_g $ Prompt Template：
+$$ T_o vs. T_r vs. T_g $$ Prompt Template：
 - **T_o**：動態意見範本
 - **T_r**：重組一致性範本
 - **T_g**：生成內容範本
