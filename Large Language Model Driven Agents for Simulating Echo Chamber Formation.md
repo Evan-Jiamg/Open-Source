@@ -15,9 +15,11 @@ $$O_i(t+1) = O_i(t) + \frac{1}{|N_i(t)|} \sum_{j \in N_i(t)} f(O_j, O_i(t))$$
 | $f(O_j, O_i(t)) = w_{ij}(O_j - O_i)$ | 影響函數，鄰居 $j 的意見對 Agent i$ 的拉力 |
 
 本文的 LLM-enhanced 框架將影響函數 $$f$$ 替換為 Prompt-driven 模型：
+ 
  $$f(O_j, O_i(t)) = \text{LLM}(\mathcal{T}_o(C_i, C_j))$$
  
 同時，Network Rewiring 所使用的相容性函數 $$g$$ 亦以 LLM 定義：
+ 
  $$g(O_i, O_j) = \text{LLM}(\mathcal{T}_r(C_i, C_j))$$
 
 | Template | 用途 |
