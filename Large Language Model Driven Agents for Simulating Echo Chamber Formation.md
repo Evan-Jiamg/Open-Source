@@ -12,17 +12,15 @@ $$O_i(t+1) = O_i(t) + \frac{1}{|N_i(t)|} \sum_{j \in N_i(t)} f(O_j, O_i(t))$$
 |------|------|
 | $O_i(t)$ | Agent $i$ 在時間 $t$ 所持有的意見 |
 | $N_i(t)$ | Directed Graph 中 Agent $i$ 的鄰居集合 |
-| $f(O_j, O_i(t)) = w_{ij}(O_j - O_i)$ | 影響函數，量化鄰居 $j$ 的意見對 Agent $i$ 的拉力 |
+| $f(O_j, O_i(t)) = w_{ij}(O_j - O_i)$ | 影響函數，鄰居 $j 的意見對 Agent i$ 的拉力 |
 
-在傳統 Equation-based 模擬中，$f$ 以數值形式定義，意見 $O$ 為純量，直接代入公式迭代計算。
+在傳統 Equation-based 模擬中，$f 以數值形式定義，意見 O$ 為純量，直接代入公式迭代計算。
 
-本文的 **LLM-enhanced 框架**則將 $f$ 與相容性函數 $g$ 替換為 Prompt-driven 模型：
+本文的 **LLM-enhanced 框架**則將 $f 與相容性函數 g$ 替換為 Prompt-driven 模型：
 
 $$f(O_j, O_i(t)) = \text{LLM}(\mathcal{T}_o(C_i, C_j))$$
 
 $$g(O_i, O_j) = \text{LLM}(\mathcal{T}_r(C_i, C_j))$$
-
-此時意見 $O$ 不再是顯式數值，而由 $C_i$（Agent 最近貼文子集合）隱含表達，使模擬從純數值運算提升至具備語意理解的情境感知框架。
 
 ---
 
@@ -44,7 +42,7 @@ LLM 包括：ChatGPT、GPT4o Mini、Gemini、Gemma、Meta-Llama、Qwen
 
 **LLM Process：**
 
-**(1)** 每次迭代，隨機選擇的一位 Agent，會查看來自 Directed Graph 所有鄰居的優先推薦 Posts
+**(1)** 每次迭代，隨機選擇的一位 Agent，查看來自 Directed Graph 所有鄰居的優先推薦 Posts
 
 **(2)** 接著，LLM 根據剛查看的鄰居 Posts + Agents 歷史 Posts，利用 LLM 意見更新算法，產生新 Posts：
 
@@ -54,7 +52,7 @@ $$f(O_j, O_i(t)) = \text{LLM}(\mathcal{T}_o(C_i, C_j))$$
 
 > $C$：Agent 最近貼文子集合
 
-**(3)** 再根據函數 $g$，利用機率 $P$ 動態調整 Agent 連結 (Connection)，作為 Follow / Unfollow 行為：
+**(3)** 再根據函數 $g，利用機率 P$ 動態調整 Agent 連結 (Connection)，作為 Follow / Unfollow 行為：
 
 $$P_{\text{Unfollow}}(i,j) \propto 1 - g(O_i, O_j) = \text{LLM}(\mathcal{T}_r(C_i, C_j))$$
 
