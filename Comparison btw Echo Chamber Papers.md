@@ -2,8 +2,7 @@
 
 ---
 
-### 一、背景與動機
-
+### 一、背景動機
 
 這兩篇 Paper 都在探討 LLM Agent 能否模擬真實社群網路中的 Echo Chamber 現象，並以傳統數值模型（BCM / FJ / DeGroot）作為對照基準。
 
@@ -29,22 +28,24 @@ Agent 具備短期記憶 + 長期記憶：
 
 ---
 
-**Paper 2（）**
+**Paper 2（LLM-Enhanced）**
 
 <img width="1888" height="409" alt="image" src="https://github.com/user-attachments/assets/113b3f4e-4856-4d68-8c3d-d0a01e068a6a" />
 
-根據使用者在 Twitter 的交互關係，包括回文（Retweets）+ 貼文（Posts）+ 追蹤關係，由具備獨特意見的使用者（節點）+ 社會連結（線）組成，建構 Active User Network。Agent 的 Context 以**歷史貼文**作為意見的代表。
+根據使用者在 Twitter 的交互關係，包括回文（Retweets）+ 貼文（Posts）+ 追蹤關係，由具備獨特意見的使用者（節點）+ 社會連結（線）組成，建構 Active User Network。
+
+Agent 的 Context 以**歷史貼文**作為意見的代表。
 
 ---
 
 ### 三、Network 差異：靜態 vs. 動態
 
-Paper 1 網路固定，不會隨時間改變，聚焦意見如何在不同拓樸中演化。
+Paper 1 Network 固定，不會隨時間改變，聚焦 Opinion 如何在不同 Method 中演化。
 
-Paper 2 網路會隨 Agent 意見相似性動態重組，更貼近真實 Twitter 行為：
+Paper 2 Network 會隨 Agent 意見相似性動態重組，更貼近真實 Twitter 行為：
 
-- **P_Unfollow** 取決於 `1 - g(O_i, O_j)`：意見越不像，越容易 Unfollow
-- **P_Follow** 取決於 `g(O_i, O_k)`：意見越相似，越容易 Follow
+- **P_Unfollow** 取決於 `1 - $g(O_i, O_j)$`：意見越不像，越容易 Unfollow
+- **P_Follow** 取決於 `$g(O_i, O_k)$`：意見越相似，越容易 Follow
 
 > g(O_i, O_j)：衡量 Agent 和鄰居意見相似性
 
@@ -62,7 +63,7 @@ $$v_i^{BCM}(t) = v_i^{BCM}(t-1) + \mu(v_j^{BCM}(t-1) - v_i^{BCM}(t-1))$$
 - 透過 mu 控制每次互動後意見移動幅度，mu 大 → 加速意見收斂
 - Threshold 小 → Echo Chamber 強；Threshold 大 → Echo Chamber 弱
 
-FJ 因為永遠有 v_i(0)，w 再大，v_i(0) 始終在拉回 Agent 的意見，意見只能趨近某中間值，無法完全收斂到鄰居立場。
+FJ 因為永遠有 $v_i(0)，w 再大，v_i(0)$ 始終在拉回 Agent 的意見，意見只能趨近某中間值，無法完全收斂到鄰居立場。
 
 $$v_i(t) = \frac{v_i(0) + \sum_{j \in N(i)} w_{ij} \cdot v_j(t-1)}{1 + |N(i)|}$$
 
@@ -76,9 +77,9 @@ $$f(O_j, O_i(t)) = \text{LLM}(T_o(C_i, C_j))$$
 $$g(O_i, O_j) = \text{LLM}(T_r(C_i, C_j))$$
 $$y_i(t) \sim \text{LLM}(T_g(C_i, \{C_j \mid j \in N_i(t)\}))$$
 
-<img width="1013" height="1032" alt="image" src="https://github.com/user-attachments/assets/04e81d0e-3ab8-47fe-bc44-7efff8945bb6" />
+<img width="800" height="820" alt="image" src="https://github.com/user-attachments/assets/04e81d0e-3ab8-47fe-bc44-7efff8945bb6" />
 
-T_o vs. T_r vs. T_g 為 Prompt Template：
+$T_o vs. T_r vs. T_g $ Prompt Template：
 - **T_o**：動態意見範本
 - **T_r**：重組一致性範本
 - **T_g**：生成內容範本
@@ -107,7 +108,7 @@ T_o vs. T_r vs. T_g 為 Prompt Template：
 
 ### 六、總結對比
 
-| 面向 | Paper 1 (SSF) | Paper 2 (COLING) |
+| 面向 | Paper 1 (SSF) | Paper 2 (LLM-Enhanced) |
 |------|------|------|
 | 網路結構 | 預設三種靜態拓樸 | 從 Twitter 真實資料萃取 |
 | Agent 設計 | Persona（Big Five）+ 短/長期記憶 | 歷史貼文作為 Context |
