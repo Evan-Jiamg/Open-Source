@@ -14,7 +14,7 @@ $$O_i(t+1) = O_i(t) + \frac{1}{|N_i(t)|} \sum_{j \in N_i(t)} f(O_j, O_i(t))$$
 | $N_i(t)$ | Directed Graph 中 Agent $i$ 的鄰居集合 |
 | $f(O_j, O_i(t)) = w_{ij}(O_j - O_i)$ | 影響函數，鄰居 $j 的意見對 Agent i$ 的拉力 |
 
-在傳統 Equation-based 模擬中，$f 以數值形式定義，意見 O$ 為純量，直接代入公式迭代計算。
+在傳統 Equation-based 模擬中，$$f$$ 以數值形式定義，意見 $$O$$ 為純量，直接代入公式迭代計算。
 
 本文的 **LLM-enhanced 框架**則將 $f 與相容性函數 g$ 替換為 Prompt-driven 模型：
 
