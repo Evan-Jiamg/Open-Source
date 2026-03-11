@@ -22,6 +22,11 @@ $$f(O_j, O_i(t)) = \text{LLM}(\mathcal{T}_o(C_i, C_j))$$
 
 $$g(O_i, O_j) = \text{LLM}(\mathcal{T}_r(C_i, C_j))$$
 
+| Template | 用途 |
+|----------|------|
+| $\mathcal{T}_o$ | 動態意見範本 |
+| $\mathcal{T}_r$ | 重組一致性範本 |
+
 ---
 
 ## 具體實驗步驟
@@ -46,7 +51,7 @@ LLM 包括：ChatGPT、GPT4o Mini、Gemini、Gemma、Meta-Llama、Qwen
 
 **(2)** 接著，LLM 根據剛查看的鄰居 Posts + Agents 歷史 Posts，利用 LLM 意見更新算法，產生新 Posts：
 
-$$y_i(t) \sim \text{LLM}\!\left(\mathcal{T}_g\!\left(C_i,\ \{C_j \mid j \in N_i(t)\}\right)\right)$$
+$$y_i(t) \sim \text{LLM}\left(\mathcal{T}_g\left(C_i,\ \{C_j \mid j \in N_i(t)\}\right)\right)$$
 
 $$f(O_j, O_i(t)) = \text{LLM}(\mathcal{T}_o(C_i, C_j))$$
 
@@ -62,15 +67,9 @@ $$P_{\text{Follow}}(i,k) \propto g(O_i, O_k) = \text{LLM}(\mathcal{T}_r(C_i, C_k
 
 **Prompt Template 說明：**
 
-| Template | 用途 |
-|----------|------|
-| $\mathcal{T}_o$ | 動態意見範本 |
-| $\mathcal{T}_r$ | 重組一致性範本 |
 | $\mathcal{T}_g$ | 生成內容範本 |
 
-透過這些範本結構，可以確保 LLM 能動態應對文章內容，將動態意見、決策重組、文章生成，融合成互相作用 + 邏輯一致的框架。
-
-**具體範例：**
+**範例：**
 
 <img width="650" height="780" alt="image" src="https://github.com/user-attachments/assets/1535b182-3389-49a6-983b-fa18a93db047" />
 
