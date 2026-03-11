@@ -72,7 +72,7 @@ $$v_i(t) = \frac{v_i(0) + \sum_{j \in N(i)} w_{ij} \cdot v_j(t-1)}{1 + |N(i)|}$$
 
 以 DeGroot Model 為基礎，將影響函數 f 改為 LLM 意見更新算法：
 
-$$ O_i(t+1) = O_i(t) + (1 / |N_i(t)|) * sigma {j belongs to N_i(t)} {f(O_j, O_i(t))} $$
+$$ O_i(t+1) = O_i(t) + \frac{1}{|N_i(t)|} \sum_{j \in N_i(t)} f(O_j, O_i(t)) $$
 
 	O_i(t) : Agent 在特定時間 t  所持有的 意見
 
