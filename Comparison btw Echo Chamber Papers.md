@@ -4,7 +4,7 @@
 
 ### 一、背景動機
 
-這兩篇 Paper 都在探討 LLM Agent 能否模擬真實社群網路中的 Echo Chamber 現象，並以傳統數值模型（BCM / FJ / DeGroot）作為對照基準。
+這兩篇 Paper 都在探討 LLM Agent 能否模擬真實社群網路中的 Echo Chamber 現象，並以傳統數值模型作為對照基準。
 
 ---
 
