@@ -74,7 +74,7 @@ $$P_{\text{Follow}}(i,k) \propto g(O_i, O_k) = \text{LLM}(\mathcal{T}_r(C_i, C_k
 
 **具體範例：**
 
-<img width="882" height="911" alt="image" src="https://github.com/user-attachments/assets/1535b182-3389-49a6-983b-fa18a93db047" />
+<img width="650" height="780" alt="image" src="https://github.com/user-attachments/assets/1535b182-3389-49a6-983b-fa18a93db047" />
 
 
 上圖為 $\mathcal{T}_g$ Prompt Template，透過調整 Task-Specific 描述 + Input，也適用於 $\mathcal{T}_o$ 和 $\mathcal{T}_r$。
@@ -85,7 +85,7 @@ $$P_{\text{Follow}}(i,k) \propto g(O_i, O_k) = \text{LLM}(\mathcal{T}_r(C_i, C_k
 
 ### Stand Alone Simulation
 
-<img width="1476" height="892" alt="image" src="https://github.com/user-attachments/assets/48475657-701e-4c60-8e2c-2d3895e5b194" />
+<img width="1250" height="650" alt="image" src="https://github.com/user-attachments/assets/48475657-701e-4c60-8e2c-2d3895e5b194" />
 
 **ChatGPT vs. Gemini**（藍色 → $+1$ 支持 / 橘色 → $-1$ 反對）
 
