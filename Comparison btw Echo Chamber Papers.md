@@ -110,9 +110,10 @@ $T_o vs. T_r vs. T_g $ Prompt Template：
 
 | 面向 | Paper 1 (SSF) | Paper 2 (LLM-Enhanced) |
 |------|------|------|
-| 網路結構 | 預設三種靜態拓樸 | 從 Twitter 真實資料萃取 |
+| 網路結構 | 預設三種靜態 Network | Twitter 真實資料收集 |
 | Agent 設計 | Persona（Big Five）+ 短/長期記憶 | 歷史貼文作為 Context |
-| 意見更新 | 文字（SSF）vs 數值（BCM / FJ） | LLM 生成新 Post（T_g） |
+| 意見更新 | 文字（SSF）vs 數值（BCM / FJ） | 文字（ChatGPT、GPT4o Mini、Gemini、Gemma、Meta-Llama、Qwen
+） vs. 數值 (Equation-Based) |
 | 連結動態 | **固定，不變** | **動態 Follow / Unfollow** |
 | 驗證方式 | Polarization / GD / NCI | 對照真實 Twitter：Modularity / Clustering / Path Length / Density |
-| 共同結論 | LLM 比傳統數值方法更能捕捉 Echo Chamber 現象 ||
+| 共同結論 | LLM 比傳統數值方法更能呈現 Echo Chamber  ||
